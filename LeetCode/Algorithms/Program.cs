@@ -22,6 +22,9 @@
                 });
             var result3 = LongestSubstringWithoutRepeatingCharacters3.LengthOfLongestSubstring("abcabcbb");
             var result4 = MedianOfTwoSortedArrays4.FindMedianSortedArrays(new int[] { 1, 3 }, new int[] { 2 });
+            var result7 = ReverseInteger7.Reverse(-123);
+            var result8 = StringToIntegerAtoi8.MyAtoi("4193 with words");
+            var result9 = PalindromeNumber9.IsPalindrome(121);
         }
     }
 }
