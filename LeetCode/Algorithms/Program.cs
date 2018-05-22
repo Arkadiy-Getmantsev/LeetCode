@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Algorithms
+﻿namespace Algorithms
 {
     class Program
     {
@@ -26,6 +20,8 @@ namespace Algorithms
                         next = new ListNode(4)
                     }
                 });
+            var result3 = LongestSubstringWithoutRepeatingCharacters3.LengthOfLongestSubstring("abcabcbb");
+            var result4 = MedianOfTwoSortedArrays4.FindMedianSortedArrays(new int[] { 1, 3 }, new int[] { 2 });
         }
     }
 }
