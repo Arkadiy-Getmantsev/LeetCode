@@ -8,10 +8,11 @@ namespace Algorithms
         {
             if (string.IsNullOrEmpty(s?.Trim())) return string.Empty;
 
-            if (numRows == 1 || s.Length == 1)
+            if (numRows == 1 || s.Length == 1 || s.Length <= numRows)
                 return s;
 
-            int columns = (int)((Math.Ceiling(s.Length / (decimal)numRows)) + 2);
+            int columns = (int)((s.Length / (decimal)numRows) + 
+                (Math.Ceiling(s.Length / (decimal)numRows) / 2));
 
             string[,] matrix = new string[numRows, columns];
 
@@ -60,9 +61,16 @@ namespace Algorithms
             {
                 for (int j = 0; j < columns; j++)
                 {
-                    if(i == 0 || i == numRows - 1)
+                    if(i == 0)
                     {
-                        if((j + 1) % 2 != 0)
+                        if(j == 0 || j % 2 != 0)
+                        {
+                            result += matrix[i, j] ?? string.Empty;
+                        }
+                    }
+                    else if(i == numRows - 1)
+                    {
+                        if (j % 2 != 0)
                         {
                             result += matrix[i, j] ?? string.Empty;
                         }
