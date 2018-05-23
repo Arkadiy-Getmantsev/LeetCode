@@ -46,6 +46,7 @@
     <Compile Include="2_AddTwoNumbers.cs" />
     <Compile Include="3_LongestSubstringWithoutRepeatingCharacters.cs" />
     <Compile Include="4_MedianOfTwoSortedArrays.cs" />
+    <Compile Include="5_LongestPalindromicSubstring.cs" />
     <Compile Include="7_ReverseInteger.cs" />
     <Compile Include="8_StringToIntegerAtoi.cs" />
     <Compile Include="9_PalindromeNumber.cs" />
