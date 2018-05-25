@@ -6,13 +6,36 @@ namespace Algorithms
     {
         public static string Convert(string s, int numRows)
         {
+            var result = string.Empty;
+
             if (string.IsNullOrEmpty(s?.Trim())) return string.Empty;
 
             if (numRows == 1 || s.Length == 1 || s.Length <= numRows)
                 return s;
 
+            if (numRows == 2)
+            {
+                for (int i = 0; i < s.Length; i++)
+                {
+                    if (i == 0 || i % 2 == 0)
+                    {
+                        result += s[i];
+                    }
+                }
+
+                for (int i = 0; i < s.Length; i++)
+                {
+                    if (i % 2 != 0)
+                    {
+                        result += s[i];
+                    }
+                }
+
+                return result;
+            }
+
             int columns = (int)((s.Length / (decimal)numRows) + 
-                (Math.Ceiling(s.Length / (decimal)numRows) / 2));
+                (Math.Ceiling(s.Length / (decimal)numRows) / 2) + 1);
 
             string[,] matrix = new string[numRows, columns];
 
@@ -55,34 +78,34 @@ namespace Algorithms
                 }
             }
 
-            var result = string.Empty;
-
             for (int i = 0; i < numRows; i++)
             {
                 for (int j = 0; j < columns; j++)
                 {
-                    if(i == 0)
+                    if (i == 0 && j == 0)
                     {
-                        if(j == 0 || j % 2 != 0)
-                        {
-                            result += matrix[i, j] ?? string.Empty;
-                        }
+                        result += matrix[i, j] ?? string.Empty;
                     }
-                    else if(i == numRows - 1)
+                    else if (i == 0 && j != 0 && j % 2 != 0)
                     {
-                        if (j % 2 != 0)
-                        {
-                            result += matrix[i, j] ?? string.Empty;
-                        }
+                        result += matrix[i, j] ?? string.Empty;
                     }
-                    else
+                    else if (i != 0 && i != numRows - 1)
+                    {
+                        result += matrix[i, j] ?? string.Empty;
+                    }
+                    else if (i == numRows - 1 && j == 0)
+                    {
+                        result += matrix[i, j] ?? string.Empty;
+                    }
+                    else if (i == numRows - 1 && j % 2 == 0)
                     {
                         result += matrix[i, j] ?? string.Empty;
                     }
                 }
             }
 
-            return result;              
+            return result;
         }
     }
 }
