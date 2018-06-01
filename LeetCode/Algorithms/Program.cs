@@ -27,6 +27,7 @@
             var result7 = ReverseInteger7.Reverse(-123);
             var result8 = StringToIntegerAtoi8.MyAtoi("4193 with words");
             var result9 = PalindromeNumber9.IsPalindrome(121);
+            var result10 = RegularExpressionMatching10.IsMatch("ab", ".*..c*");
         }
     }
 }

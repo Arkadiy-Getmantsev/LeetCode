@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="10_RegularExpressionMatching.cs" />
     <Compile Include="2_AddTwoNumbers.cs" />
     <Compile Include="3_LongestSubstringWithoutRepeatingCharacters.cs" />
     <Compile Include="4_MedianOfTwoSortedArrays.cs" />
